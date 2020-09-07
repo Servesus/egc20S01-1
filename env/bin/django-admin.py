@@ -1,4 +1,4 @@
-#!/home/ubuntu/01_decideenv/env/bin/python3
+#!/home/jesus/egc20S01-1/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
