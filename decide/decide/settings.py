@@ -11,7 +11,20 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-
+import django_heroku
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+BASEURL = 'https://examen-septiembre-jesgarjim5.herokuapp.com'
+APIS = {
+    	'authentication': 'https://examen-septiembre-jesgarjim5.herokuapp.com', 
+    	'base': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'booth': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'census': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'mixnet': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+   	'postproc': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'store': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'visualizer': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+    	'voting': 'https://examen-septiembre-jesgarjim5.herokuapp.com',
+	}
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -70,7 +83,7 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+BASEURL = 'http://10.5.0.1:8000'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -180,3 +193,4 @@ if os.path.exists("config.jsonnet"):
 
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
+django_heroku.settings(locals())
